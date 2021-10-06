@@ -1,28 +1,42 @@
 # rEFInd theme Regular
 
-A simplistic clean and minimal theme for [rEFInd](https://www.rodsbooks.com/refind/index.html)
-
-NOTE: this is a fork of [munlik's theme](https://github.com/munlik/refind-theme-regular) since he seems to have abandoned his project, he didn't answer to (my) PRs on github for years.
+A simplistic clean and minimal theme for [rEFInd](https://www.rodsbooks.com/refind/index.html), forked from [munlik's theme](https://github.com/munlik/refind-theme-regular).[^1]
 
  **press F10 to take screenshot**
  
-(default settings)
-![Screenshot 01](https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/src/white_theme.png )
-
-(dark theme selected)
-![Screenshot 02](https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/src/dark_theme.png)
+|![Screenshot 01](https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/src/white_theme.png)|![Screenshot 02](https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/src/dark_theme.png)|
+|:-:|:-:|
+|Regular-Light Theme (Default)|Regular-Dark theme|
 
 
 
 ### Installation [Quick]:
 
 1. Just paste this command in your terminal and enter your choices.
+   #### Linux
    ```
    sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/bobafetthotmail/refind-theme-regular/master/install.sh)"
    ```
-2. To further adjust icon size, font size, background color and selector color edit `/boot/efi/EFI/refind/refind-theme-regular/theme.conf` as root/SuperUser.
-
+   
+   #### Windows-TO DO
+   If you prefer using [PowerShell Core](https://github.com/PowerShell/PowerShell), replace `powershell` with `pwsh`[^2].
+   ```
+   powershell -blah blah blah
+   ```
+   
+2. To further adjust icon size, font size, background color and selector color :
+   #### Linux
+   Edit `/boot/efi/EFI/refind/refind-theme-regular/theme.conf` as root/Superuser.
+   
+   #### Windows
+   Mount EFI System partition and edit `R:\EFI\refind\refind-theme-regular\theme.conf` (Run as admin).
+   ```
+   mountvol R: /S
+   notepad R:\EFI\refind\refind-theme-regular\theme.conf
+   ```
+   
 ### Installation [Manual]:
+This is written primarily for `Linux`, but doing the equivalent will work for `Windows`.
 
 1. Clone git repository to your `$HOME` directory.
    ```
@@ -34,7 +48,7 @@ NOTE: this is a fork of [munlik's theme](https://github.com/munlik/refind-theme-
    sudo rm -rf refind-theme-regular/{src,.git}
    ```
    ```
-   sudo rm refind-theme-regular/install.sh
+   sudo rm refind-theme-regular/install.{sh,ps1}
    ```
 
 3. Locate refind directory under EFI partition. For most Linux based system is commonly `/boot/efi/EFI/refind/`. Copy theme directory to it.
@@ -79,3 +93,5 @@ NOTE: this is a fork of [munlik's theme](https://github.com/munlik/refind-theme-
 **More information**
 
 [rEFInd](http://www.rodsbooks.com/refind/) The official rEFInd website
+[^1]: Since [Munlik](https://github.com/munlik) seems to have abandoned [his project](https://github.com/munlik/refind-theme-regular), he didn't answer to (my) PRs on github for years.
+[^2]: Though pwsh is cross-platform, this script is written exclusively for Windows.
