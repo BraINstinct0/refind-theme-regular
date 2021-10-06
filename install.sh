@@ -109,7 +109,7 @@ echo " - [DONE]"
 #Clean up
 echo -n "Removing unused directories"
 rm -rf refind-theme-regular/{src,.git}
-rm -rf refind-theme-regular/install.sh
+rm -rf refind-theme-regular/install.{sh,ps1}
 echo " - [DONE]"
 
 #Remove previous installs
